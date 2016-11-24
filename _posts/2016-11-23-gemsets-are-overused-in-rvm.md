@@ -2,14 +2,14 @@
 layout: post
 title:  "Gemsets are overused in RVM"
 date:   2016-11-23 16:47:14
-categories: rvm ruby 
+categories: rvm ruby
 ---
 
 When you are introduced to RVM as a ruby version manager you are tempted
 to use gemsets for every project. And while this is not a bad practice,
 you are missing the point of gem management.
 
-> Don't use gemsets to keep gems separate between different projects.  
+> Don't use gemsets to keep gems separate between different projects.
 > This is why Bundler exists.
 
 When you are using Bundler, you don't need a gemset for each project.
