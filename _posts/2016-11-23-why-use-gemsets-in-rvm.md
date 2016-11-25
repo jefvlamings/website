@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Gemsets are overused in RVM"
+title:  "Why use gemsets in RVM?"
 date:   2016-11-23 16:47:14
 categories: rvm ruby
 ---
