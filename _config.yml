@@ -5,7 +5,6 @@ paginate: 5
 paginate_path: "/posts/page/:num/"
 url: www.jefvlamings.com
 blog_theme: light # Or use dark
-baseurl: /website
 
 # Optional settings
 
