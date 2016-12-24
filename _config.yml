@@ -3,7 +3,7 @@
 name: Jef Vlamings
 paginate: 5
 paginate_path: "/blog/page/:num/"
-url: www.jefvlamings.com
+url: www.jefvlamings.be
 blog_theme: light # Or use dark
 
 # Optional settings
@@ -22,7 +22,6 @@ social:
 # Important settings (change at own risk)
 
 assets:
-  baseurl: http://jefvlamings.github.io/website/assets
   compress:
     css: true
     js: true
