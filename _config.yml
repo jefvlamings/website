@@ -3,7 +3,7 @@
 name: Jef Vlamings
 paginate: 5
 paginate_path: "/blog/page/:num/"
-url: jefvlamings.be
+url: http://jefvlamings.be
 blog_theme: light # Or use dark
 
 # Optional settings
