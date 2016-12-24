@@ -45,23 +45,18 @@ $article-paginator-color-hover: $gray-darkest;
 // =============================================================================
 
 // Vendors
-
 @import "vendor/normalize";
-@import "../bower/fluidbox/src/css/_fluidbox.scss";
 
 // Settings
-
 @import "variables";
 @import "mixins";
 @import "base";
 
 // Layouts
-
 @import "layouts/footer";
 @import "layouts/grid";
 
 // Modules
-
 @import "modules/about";
 @import "modules/articles";
 @import "modules/embed";
