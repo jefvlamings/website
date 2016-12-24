@@ -1,0 +1,207 @@
+/* CSS Reset - Eric Meyer */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Start styling from here */
+body {
+	margin: 0 auto;
+	width: 550px;
+	font-family: "Myriad Pro", Myriad,Tahoma, Geneva, sans-serif;
+}
+
+h1 {
+	font-size: 200%;
+	line-height: 400%;
+}
+
+h2 {
+	font-size: 150%;
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+
+a{
+	font-family: Georgia, Times, “Times New Roman”, serif;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 10px;
+	letter-spacing: 1px;
+	color: #6fa2c0;
+	text-decoration: none;
+	text-shadow: #e0f0f9 0px 1px 0px;
+}
+
+/* Photoshop Mockup *************************************/
+#photoshop{
+	height: 64px;
+	width: 542px;
+	background: url("images/photoshop.png");
+}
+
+/* CSS background-image *********************************/
+ul#css{
+	overflow:auto;
+}
+
+ul#css li {
+	display: inline;
+}
+.tag {
+	float: left;
+	margin-right: 9px;
+	margin-bottom: 10px;
+}
+.tagleft {
+	float: left;
+	width: 14px;
+	height: 23px;
+	background: url("images/tagleft.png");
+}
+.tagbg {
+	text-align: center;
+	float: left;
+	height: 23px;
+	background: url("images/tagbg.png");
+}
+
+.tagright {
+	float: left;
+	width: 4px;
+	height: 23px;
+	background: url("images/tagright.png");
+}
+
+.tagbg p{
+	line-height:23px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+/* CSS3 *************************************************/
+
+ul#css3{
+	overflow: auto;
+	}
+
+ul#css3 li, ul#css3 a{
+	float:left;
+	height:23px;
+	line-height:23px;
+	position:relative;
+	left: 6px;
+	margin-bottom: 12px;
+	}
+
+ul#css3 a{
+	margin-right: 14px;
+	padding:0 8px 0 12px;
+    background: #c9e5f5;
+    background: -moz-linear-gradient(top, #c9e5f5, #aed8f0);
+    background: -webkit-gradient(linear,
+                left top, left bottom, from(#c9e5f5), to(#aed8f0));
+    filter: progid:DXImageTransform.Microsoft.Gradient(
+                StartColorStr='#c9e5f5', EndColorStr='#aed8f0', GradientType=0);
+ 
+	
+	-moz-border-radius-bottomright:4px;
+	-webkit-border-bottom-right-radius:4px;	
+	border-bottom-right-radius:4px;
+	-moz-border-radius-topright:4px;
+	-webkit-border-top-right-radius:4px;	
+	border-top-right-radius:4px;	
+	
+	border: 1px solid #86bedf;
+	border-left: none;
+	} 
+
+ul#css3 a:before{
+	content:"";
+	float:left;
+	position:absolute;
+	top:0;
+	left:-8px;
+	border-color:transparent #c9e5f5 transparent transparent;
+	border-style:solid;
+	border-width:12px 8px 12px 0;		
+	}
+	
+ul#css3 a:after{
+	content:"";
+	position:absolute;
+	top:9px;
+	left:0;
+	float:left;
+	width:4px;
+	height:4px;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+	background:#fff;
+	border: 1px solid #86bedf;
+	}	
+
+/* HTML5 ************************************************/
+ul#html5{
+	overflow:auto;
+}
+
+
+ul#html5 li {
+	display: inline;
+}
+
+.wrap {
+	position: relative;
+	text-align: left;
+}
+
+ul#html5 canvas {
+	margin-right: 4px;
+}
+
+ul#html5 p {
+	position: absolute;
+	z-index: 2;
+	left: 20px;
+	top: -11px;
+}

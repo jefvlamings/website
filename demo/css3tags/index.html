@@ -1,0 +1,160 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		
+		<script type="text/javascript">
+			window.addEventListener('load', function () {
+
+// Get the canvas element.
+			var can1 = document.getElementById('canvas1');
+			var context = can1.getContext('2d');
+
+// Define how the shape should be filled
+  			var lingrad = context.createLinearGradient(0,0,0,25); //create variable with linear gradient from top to bottom 
+  			lingrad.addColorStop(0, '#c9e5f5'); //set top color   
+  			lingrad.addColorStop(1, '#aed8f0'); //set bottom color 
+			context.fillStyle = lingrad; // set fillstyle to variable "lingrad" 
+		   
+// Define how stroke should look like
+			context.strokeStyle = '#86bedf'; //stroke color 
+			context.lineWidth = 1; //stroke width
+		
+// Create tag shape			
+			context.beginPath(); // Let's start drawing our shape.
+			context.moveTo(0.5, 12); // Where to start drawing.
+			context.lineTo(8.5, 0.5); // Draw top diagonal side of arrow			
+			context.lineTo(161.5, 0.5); // Draw top side of shape
+			context.quadraticCurveTo(164.5, 0.5, 164.5, 3.5); // Draw the top right rounded corner  
+			context.lineTo(164.5, 20.5); // Draw right side of shape
+			context.quadraticCurveTo(164.5, 23.5, 161.5, 23.5); // Draw the bottom right rounded corner  
+			context.lineTo(8.5, 23.5); // Draw the bottom side of the shape
+			context.lineTo(0.5, 12); // Draw the bottom diagonal side of arrow
+			context.closePath();// Stop drawing that tag shape
+
+			context.fill(); // Fill the shape as defined above
+			context.stroke(); // Add a stroke to the shape as defined above
+
+// Add little white hole in tag
+			context.fillStyle = "white"; // Set filling color to white 
+			context.beginPath(); // Start drawing circle shape
+			context.arc(12,12,3,0,Math.PI*2,true); // Circle with 3px radius 
+			context.closePath();// Stop drawing that tag shape
+			context.fill(); // Fill the hole as defined above
+			context.stroke(); // Add a stroke to the hole as defined above
+
+// Draw each canvas over and over. This is because contexts can't be shared
+			var can2 = document.getElementById('canvas2');
+			var ctx2 = can2.getContext('2d');
+			ctx2.drawImage(can1, 0, 0);
+
+			var can3 = document.getElementById('canvas3');
+			var ctx3 = can3.getContext('2d');
+			ctx3.drawImage(can1, 0, 0);
+
+			var can4 = document.getElementById('canvas4');
+			var ctx4 = can4.getContext('2d');
+			ctx4.drawImage(can1, 0, 0);
+
+			var can5 = document.getElementById('canvas5');
+			var ctx5 = can5.getContext('2d');
+			ctx5.drawImage(can1, 0, 0);
+
+
+			}, false);
+		</script>
+		
+	</head>
+<body>
+<h1>Category tags: CSS vs CSS3 vs HTML5</h1>
+
+<h2>Photoshop mock-up</h2>
+<div id="photoshop"></div>
+
+<h2>CSS (background-image)</h2>
+<ul id="css">
+	<li class="tag">
+		<div class="tagleft"></div>
+		<div class="tagbg">
+			<p><a href="#">Photoshop mockup</a></p>
+		</div>
+		<div class="tagright"></div>
+	</li>
+	<li class="tag">
+		<div class="tagleft"></div>
+		<div class="tagbg">
+			<p><a href="#">CSS background-image</a></p>
+		</div>
+		<div class="tagright"></div>
+	</li>
+	<li class="tag">
+		<div class="tagleft"></div>
+		<div class="tagbg">
+			<p><a href="#">CSS3 border-radius</a></p>
+		</div>
+		<div class="tagright"></div>
+	</li>
+	<li class="tag">
+		<div class="tagleft"></div>
+		<div class="tagbg">
+			<p><a href="#">CSS3 tranparent borders</a></p>
+		</div>
+		<div class="tagright"></div>
+	</li>
+	<li class="tag">
+		<div class="tagleft"></div>
+		<div class="tagbg">
+			<p><a href="#">HTML5 Canvas</a></p>
+		</div>
+		<div class="tagright"></div>
+	</li>
+</ul>
+
+<h2>CSS3 (transparent borders &amp; rounded corners)</h2>
+<ul id="css3">
+	<li><a href="#">Photoshop mockup</a></li>
+	<li><a href="#">CSS background-image</a></li>
+	<li><a href="#">CSS3 border-radius</a></li>
+	<li><a href="#">CSS3 transparent borders</a></li>
+	<li><a href="#">HTML5 Canvas</a></li>
+</ul>
+
+<h2>HTML5 (canvas drawing)</h2>
+<ul id="html5">
+	<li>
+		<span class="wrap">
+			<canvas id="canvas1" width="165px" height="30px"></canvas>	
+			<p><a href="#">Photoshop mockup</a></p>
+		</span>
+	</li>
+	
+	<li>
+		<span class="wrap">
+			<canvas id="canvas2" width="192px" height="30px"></canvas>	
+			<p><a href="#">CSS background-image</a></p>
+		</span>
+	</li>
+	
+	<li>
+		<span class="wrap">
+			<canvas id="canvas3" width="169px" height="30px"></canvas>	
+			<p><a href="#">CSS3 border-radius</a></p>
+		</span>
+	</li>
+	
+	<li>
+		<span class="wrap">
+			<canvas id="canvas4" width="212px" height="30px"></canvas>	
+			<p><a href="#">CSS3 transparent borders</a></p>
+		</span>
+	</li>
+	
+	<li>
+		<span class="wrap">
+			<canvas id="canvas5" width="128px" height="30px"></canvas>	
+			<p><a href="#">HTML5 Canvas</a></p>
+		</span>
+	</li>
+</ul>
+	
+</body>
+</html>
