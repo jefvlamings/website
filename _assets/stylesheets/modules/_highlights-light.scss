@@ -25,16 +25,6 @@
   border-radius: 1px;
 }
 
-// Responsive
-// =============================================================================
-
-@include breakpoint(small) {
-  .highlight {
-    padding: 50px 25px;
-    font-size: 14px;
-  }
-}
-
 // Highlighting types
 // =============================================================================
 
