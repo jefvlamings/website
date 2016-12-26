@@ -12,7 +12,8 @@ Nevertheless I started to make a CSS3 calendar with some jQuery animation while 
 
 ## How to get it
 
-Visit the Github repo [here](https://github.com/jefvlamings/css3-calendar)
+[Github repo](https://github.com/jefvlamings/css3-calendar) |
+[Live demo](https://jefvlamings.github.io/css3-calendar/)
 
 ## How to use it
 
