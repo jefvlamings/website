@@ -1,6 +1,6 @@
 _site
 .sass-cache
 .idea
-/.DS_Store
+.DS_Store
 /.asset-cache
 /bower_components

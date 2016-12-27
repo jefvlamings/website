@@ -4,7 +4,7 @@ title:  "A clean calendar in CSS3 & jQuery"
 date:   2011-11-03 16:47:14
 categories: css javascript css3 jquery html5
 ---
-![CSS3 Calendar screenshot]({{ site.url }}/assets/css3-calendar.gif)
+![CSS3 Calendar screenshot]({% asset_path css3-calendar.gif %})
 
 Almost a year ago I had the idea to build a calendar app. The project was called LiveCal and was supposed to become a platform where you could share calendars. The whole idea was that calendars would become something you subscribe to. Let me clarify. Let’s say you are subscribed to the calendar stream of your school. One of your teachers plans an event, such as a task or a test and adds it to the calendar stream. From the moment the event is added to the stream, you’ll get a instant notification that a new event is being planned. This means you’ll always walk around with an updated calendar. Due to the complexity of the idea and the lack of knowledge on my side this project never really took off.
 

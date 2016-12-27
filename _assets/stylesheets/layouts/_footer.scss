@@ -3,14 +3,23 @@
 // =============================================================================
 
 .footer {
-  display: block;
-  padding: 35px 0 85px;
-  border-top: 1px solid $base-border-color;
-  p {
-    font-size: 15px;
-    color: $gray-light;
-  }
-  a {
-    text-decoration: none;
-  }
+    text-align: center;
+    display: block;
+    padding: 35px 0 85px;
+    border-top: 1px solid $base-border-color;
+    font-size: 12px;
+    a {
+        text-decoration: none;
+    }
+    span {
+        margin: 0 20px;
+    }
+}
+
+@include breakpoint(small) {
+    .footer {
+        span {
+            display: block;
+        }
+    }
 }

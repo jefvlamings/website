@@ -10,7 +10,7 @@ The first browser extension I made is [“Loop” a YouTube video playlist](http
 It has a simple and easy to use UI that popups up once you click a button in Chrome. 
 To learn how I developed this in just two weeks, keep on reading!
 
-![Loop - A YouTube playlist for Chrome]({{ site.url }}/assets/loop.png)
+![Loop - A YouTube playlist for Chrome]({% asset_path loop.png %})
 
 ## Background information
 Before you get started you should know that basic Javascript and HTML skills are required. 
@@ -30,7 +30,7 @@ There are 4 different kinds of user interfaces a Chrome extension can have.
 The official documentation is not so clear about all the options you have. 
 But these 4 appearances are the ones you’re most likely to use.
 
-![Different UI's for Chrome extensions]({{ site.url }}/assets/chrome-extensions-types.png)
+![Different UI's for Chrome extensions]({% asset_path chrome-extensions-types.png %})
 
 * **Browser Actions**: add an icon next to your address bar (i.e. to show a popup)
 * **Page Actions**: show a little icon in the address bar
@@ -117,7 +117,7 @@ Your extension should now be loaded in your Chrome browser.
 To confirm if everything went well, check if a **new icon appeared** next to the address bar.
 
 If you click on it you should see something like this:
-![Extension Popup showing Hello World!]({{ site.url }}/assets/chrome-extensions-hello-world.png)
+![Extension Popup showing Hello World!]({% asset_path chrome-extensions-hello-world.png %})
 Congratulations! You’ve just build your first Chrome extension. From now on, we’ll dive deeper into the possibilities of extensions.
 
 ## Execution environments
@@ -140,7 +140,7 @@ It tells me all about the video I’m watching.
 
 ### Background pages
 
-![Background pages vs browser actions]({{ site.url }}/assets/chrome-extensions-background.png)
+![Background pages vs browser actions]({% asset_path chrome-extensions-background.png %})
 
 Background pages are scripts that run in the background. 
 The benefits of background pages is that they are able to **communicate** with **every tab** and **every extension file** in you browser. 
@@ -165,7 +165,7 @@ Keep in mind that background pages run in the background (strangely enough).
 If you want to see error messages or console logs you won’t find it in the standard debugging console of your browser because they’re are meant for webpages. 
 Background pages run in the extension environment and thus have a **dedicated debugging console**.
 
-![Debugging console for background.html]({{ site.url }}/assets/chrome-extensions-debugging-console.png)
+![Debugging console for background.html]({% asset_path chrome-extensions-debugging-console.png %})
 
 To activate this console, go to the extensions page and click on “background.html” listed in your extension.
 
@@ -177,7 +177,7 @@ Since extensions run in a different execution environment it is **impossible for
 Google came up with something clever called “content scipts”. 
 Content scripts are **injected in the current webpage** as if they were supplied by the original website.
 
-![Content scripts vs background pages]({{ site.url }}/assets/chrome-extensions-content-script.png)
+![Content scripts vs background pages]({% asset_path chrome-extensions-content-script.png %})
 
 Content scripts have the **benefit** of communicating with background pages while maintaining the ability to read the DOM of the webpages you’re visiting. 
 The **downside ** of using content scripts is that you can’t directly call Chrome API functions from within the content script because they’re separated from the extension environment.
