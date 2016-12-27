@@ -1,13 +1,11 @@
 # Mandatory settings
-
 name: Jef Vlamings
-paginate: 5
+paginate: 10
 paginate_path: "/blog/page/:num/"
 url: http://jefvlamings.be
 blog_theme: light # Or use dark
 
 # Optional settings
-
 discus_identifier: jef-vlamings
 ga_analytics: # Add your GA Tracking Id
 rss_enabled: true # Change to false if not
@@ -19,8 +17,22 @@ social:
   email: vlamingsjef@gmail.com
   bitcoin: 1Nb661iZGgFiRC81fMhSKoRfuUYbZPextZ
 
-# Important settings (change at own risk)
+# Collections
+collections:
+  tags:
+    output: true
+    permalink: /tag/:slug/
+  projects:
+    output: true
+defaults:
+  -
+    scope:
+      path: ""
+      type: tags
+    values:
+      layout: tag
 
+# Important settings (change at own risk)
 assets:
   compress:
     css: true
@@ -32,9 +44,7 @@ assets:
     - _assets/images
     - _assets/stylesheets
 exclude:
-  - .travis.yml
   - bin/*
-  - circle.yml
   - Gemfile
   - Gemfile.lock
   - README.md

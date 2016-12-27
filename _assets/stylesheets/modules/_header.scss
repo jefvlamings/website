@@ -22,19 +22,15 @@
     padding: 0;
     margin: 15px 0 0;
     list-style: none;
-    li {
-        display: inline-block;
-        margin-left: 20px;
-        vertical-align: middle;
-        &:first-child {
-            margin-left: 0;
-        }
-        a {
-            font-size: 18px;
-            color: $header-link-color;
-            &:hover {
-                color: $header-link-color-hover;
-            }
+    a {
+        font-size: 14px;
+        color: $header-link-color;
+        //text-transform: uppercase;
+        text-decoration: none;
+        margin-left: 10px;
+        &:hover {
+            text-decoration: underline;
+            color: $header-link-color-hover;
         }
     }
 }
@@ -45,13 +41,6 @@
     }
     .header-links {
         display: block;
-        float: none;
         text-align: center;
-        li {
-            margin: 0 10px;
-            &:last-child {
-                margin-right: 0;
-            }
-        }
     }
 }

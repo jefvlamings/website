@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "A clean calendar in CSS3 & jQuery"
+description: "Test"
 date:   2011-11-03 16:47:14
-categories: css javascript css3 jquery html5
 ---
 ![CSS3 Calendar screenshot]({% asset_path css3-calendar.gif %})
 
