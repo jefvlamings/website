@@ -19,18 +19,8 @@ social:
 
 # Collections
 collections:
-  tags:
-    output: true
-    permalink: /tag/:slug/
   projects:
     output: true
-defaults:
-  -
-    scope:
-      path: ""
-      type: tags
-    values:
-      layout: tag
 
 # Important settings (change at own risk)
 assets:
