@@ -6,7 +6,8 @@ Contact me if you need a high quality application for mobile, desktop, web or al
 ---
 
 <ul class="article-list">
-    {% for project in site.projects %}
+    {% assign projects = (site.projects | sort: 'date') | reverse %}
+    {% for project in projects %}
     <li class="article-list-item ">
         {% if project.link %}
         {% assign url = project.link %}
