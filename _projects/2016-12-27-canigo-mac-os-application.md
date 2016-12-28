@@ -5,5 +5,21 @@ description: "Small Menu Bar app for MacOS that gives you real-time travel times
 date:   2016-12-27 16:47:14
 tags: [swift, app store, google maps api]
 ---
+![Download canigo from the app store]({% asset_path app-store-button.svg %})
+![Canigo dropdown menu]({% asset_path canigo-screenshot.png %})
+Your time is precious. Every minute in traffic is time taken away from your family, side projects or other quality time spendings.
 
-What is this sdfsdf
+Canigo allows you to take control over your time. Know when traffic jams are dissolving and outsmart all other commuters.
+
+With canigo you'll get real-time traffic data right in your menu bar. 
+No need to manually check travel times in your favorite map application. 
+
+Features:
+* Real-time traffic data
+* Works in all countries
+* Easy to use
+* Start at launch (opt-in)
+* Show route on map
+* Two clicks to switch direction
+
+![Canigo settings]({% asset_path canigo-settings.png %})
