@@ -19,8 +19,12 @@ social:
 
 # Collections
 collections:
+  posts:
+    output: true
+    permalink: blog/:slug
   projects:
     output: true
+    permalink: projects/:slug
 
 # Important settings (change at own risk)
 assets:
@@ -42,4 +46,3 @@ gems:
   - jekyll-assets
   - jekyll-paginate
   - jekyll-sitemap
-permalink: blog/:slug

@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Chrome extensions for dummies"
+title: "Chrome extensions for dummies"
 description: "Extensive beginners guide on Chrome extensions"
-date:   2012-04-05 16:47:14
+date: 2012-04-05 16:47:14
 ---
 
 I only recently started programming after following courses on [Codecademy](https://www.codecademy.com) and now I’m already building full-blown Chrome extensions. 

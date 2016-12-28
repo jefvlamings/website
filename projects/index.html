@@ -6,10 +6,14 @@ Contact me if you need a high quality application for mobile, desktop, web or al
 ---
 
 <ul class="article-list">
-    {% assign projects = (site.projects | sort: 'date') | reverse %}
-    {% for project in projects %}
+    {% for project in site.projects %}
     <li class="article-list-item ">
-        <a href="{{ project.link }}" title="{{ project.title }}">
+        {% if project.link %}
+        {% assign url = project.link %}
+        {% else %}
+        {% assign url = project.url | relative_url %}
+        {% endif %}
+        <a href="{{ url }}" title="{{ project.title }}">
             <h5>
                 {{ project.title }}
                 <span class="icon icon-ios-arrow-thin-right"></span>

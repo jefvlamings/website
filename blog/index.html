@@ -6,7 +6,7 @@ Contact me if you need a high quality application for mobile, desktop, web or al
 ---
 
 <ul class="article-list">
-    {% for post in paginator.posts %}
+    {% for post in site.posts %}
     <li class="article-list-item ">
         <a href="{{ post.url | relative_url }}" title="{{ post.title }}">
             <h5>

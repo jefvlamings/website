@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "A clean calendar in CSS3 & jQuery"
+title: "A clean calendar in CSS3 & jQuery"
 description: "Step by step tutorial on how to make an animated calendar with CSS and jQuery"
-date:   2011-11-03 16:47:14
+date: 2011-11-03 16:47:14
 ---
 ![CSS3 Calendar screenshot]({% asset_path css3-calendar.gif %})
 
