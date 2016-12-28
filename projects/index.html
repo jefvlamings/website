@@ -6,7 +6,8 @@ Contact me if you need a high quality application for mobile, desktop, web or al
 ---
 
 <ul class="article-list">
-    {% for project in site.projects %}
+    {% assign projects = (site.projects | sort: 'date') | reverse %}
+    {% for project in projects %}
     <li class="article-list-item ">
         <a href="{{ project.link }}" title="{{ project.title }}">
             <h5>
@@ -16,9 +17,15 @@ Contact me if you need a high quality application for mobile, desktop, web or al
         </a>
         <p>{{ project.description }}</p>
         <div class="article-list-footer">
-        <span class="article-list-date">
-          {{ project.date | date: "%B %-d, %Y" }}
-        </span>
+            <span class="article-list-date">
+              {{ project.date | date: "%B %-d, %Y" }}
+            </span>
+            <span class="article-list-divider">-</span>
+            <span class="article-list-tags">
+                {% for tag in project.tags %}
+                {{ tag }}{% if tag != project.tags.last %}, {% endif %}
+                {% endfor %}
+            </span>
         </div>
     </li>
     {% endfor %}

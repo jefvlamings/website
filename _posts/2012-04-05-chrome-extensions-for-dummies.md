@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Chrome extensions for dummies"
-description: "Test"
+description: "Extensive beginners guide on Chrome extensions"
 date:   2012-04-05 16:47:14
 ---
 
