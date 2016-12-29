@@ -10,7 +10,7 @@ The first browser extension I made is [“Loop” a YouTube video playlist](http
 It has a simple and easy to use UI that popups up once you click a button in Chrome. 
 To learn how I developed this in just two weeks, keep on reading!
 
-![Loop - A YouTube playlist for Chrome]({% asset_path loop.png %})
+![Loop - A YouTube playlist for Chrome]({% asset_path loop-screenshot.png %})
 
 ## Background information
 Before you get started you should know that basic Javascript and HTML skills are required. 
