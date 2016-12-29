@@ -10,14 +10,17 @@ Contact me if you need a high quality application for mobile, desktop, web or al
     {% for project in projects %}
     <li class="article-list-item ">
         {% if project.link %}
-        {% assign url = project.link %}
+        <a href="{{ project.link }}" target="_blank" title="{{ project.title }}">
         {% else %}
-        {% assign url = project.url | relative_url %}
+        <a href="{{ project.url | relative_url }}" title="{{ project.title }}">
         {% endif %}
-        <a href="{{ url }}" title="{{ project.title }}">
             <h5>
                 {{ project.title }}
+                {% if project.link %}
+                <span class="icon icon-share"></span>
+                {% else %}
                 <span class="icon icon-ios-arrow-thin-right"></span>
+                {% endif %}
             </h5>
         </a>
         <p>{{ project.description }}</p>
