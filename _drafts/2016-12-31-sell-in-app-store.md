@@ -16,12 +16,12 @@ Go over to [Apple developer website](https://developer.apple.com/) and sign in w
 You will now have access to all the developer goodies Apple has to offer.
 
 Quickly glance at the different sections to get an overview of all the information available.
-You'll be tempted to jump right in to the developer section and start building your app.
+You'll be tempted to jump right into the developer section and start building your app.
 That's great, but if your main focus is selling apps for profit, I suggest you skip this stuff for now.
 
 Your developer account will only get you so far. 
 While you have all information at hand you will still need the right tools and permissions to get an app in the App Store.
-Therefor Apple requires you to enroll in the Apple Developer Program.
+Therefore Apple requires you to enroll in the Apple Developer Program.
 
 ## 2. Enroll in Apple Developer Program ($$$)
 This is the part where you have put money on the table.
@@ -38,13 +38,13 @@ This is a good thing. Apple users expect good quality apps and are willing to pa
 When your payment has been received, you will get access to iTunes Connect.
 The name is probably a leftover from times where all apps lived in the iTunes Store.
 
-Go to the [iTunes Connect page](https://itunesconnect.apple.com/) and login with your Apple ID.
-At the time of writing there are 7 icons which lead you to the different sections of iTunes Connect.
+Go to the [iTunes Connect page](https://itunesconnect.apple.com/) and log in with your Apple ID.
+At the time of writing, there are 7 icons which lead you to the different sections of iTunes Connect.
 If you're stuck in any of the processes, click 'Resources and Help'. Apple has got you covered for most of the issues.
 
 The most important thing to do now is to set up users and roles.
 Apple needs to know who to contact for different cases.
-Therefor all kinds of roles within a company need to be assigned to one or more users.
+Therefore all kinds of roles within a company need to be assigned to one or more users.
 
 If you enrolled as an individual, the easiest way to get over this step is to create a user and assign every role to yourself. 
 
@@ -66,7 +66,7 @@ The tax info on the other hand needs a bit more explanation.
 
 You need to pay taxes one way or the other.
 Since Apple is a US-based company, taxes need to be arranged with the Tax service of the United States federal government.
-Therefor each company needs to fill in a US Tax form, which is provided in iTunes Connect.
+Therefore each company needs to fill in a US Tax form, which is provided in iTunes Connect.
 
 If your company is based in the US and will receive payments on a US bank account, you only need to fill in the first part.
 For foreign companies this is a bit more difficult. 
@@ -76,7 +76,7 @@ For quite a lot of countries there is a treaty which declares no taxes need to b
 **Tip:** Follow [this link](https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/ManagingContractsandBanking.html) if you need more information.
   
 If your country has this kind of treaty with the US, most of you will need to fill out a form called "US Tax form W8BEN".
-Make sure you enter all information correctly, since this is a one-time submission.
+Make sure you enter all information correctly since this is a one-time submission.
 If there is something wrong with this form, changing it will take far more effort.
 
 > Forewarned is forearmed
@@ -87,9 +87,9 @@ If you see this, champagne bottles can be popped, because the boring stuff will 
 
 
 ## 5. Build your app
-Work your magic! Building apps is what your are born for.
+Work your magic! Building apps is what you are born for.
 
-Just make sure you checkout the latest API's and SDK's at the developer pages.
+Just make sure you check out the latest API's and SDK's at the developer pages.
 
 It helps to pin down the last version of the platform you want to support.
 This gives you a clear view of which SDK's you can or can't use.
@@ -101,7 +101,7 @@ Make this decision wisely, because it will affect your revenue.
 ## 6. Set up Provisioning Profile
 While developing your app you want to test your app in a natural environment, i.e. outside a simulator.
 Before you can do this you'll need a provisioning profile.
-A provisioning profile is a collection of certificates, device identifiers and an App ID.
+A provisioning profile is a collection of certificates, device identifiers, and an App ID.
 Setting up such a profile will tie you as a developer and your devices uniquely to your app.
 
 Setting up a provisioning profile includes the process of code signing.
@@ -109,7 +109,7 @@ This step guarantees all app users that the code has not been altered or corrupt
 It is important for you, Apple and your costumers to have this kind of guarantee. 
 
 New provisioning profiles can be created in your [Apple developer account](https://developer.apple.com).
-After that you can add the provisioning profile to your app in Xcode.
+After that, you can add the provisioning profile to your app in Xcode.
 
 When everything is set up, you can test your app on any of the provisioned devices.
 
@@ -133,12 +133,12 @@ If you made it this far, you only have 1 obstacle to overcome.
 The all-feared App review!
 
 ## 9. Submit for approval
-Apple likes to have control over all the apps on there platform.
+Apple likes to have control over all the apps on their platform.
 This enables them to provide a reliable experience on all of their platforms.
-As discusses in chapter 2, this quality assurance is good thing for your company.
+As discusses in chapter 2, this quality assurance is a good thing for your company.
 
 While this step is frustrating for a lot of developers, the guidelines are very clear.
-If you take the time to checkout the most common mistakes, you'll find very little resistance from Apple.
+If you take the time to check out the most common mistakes, you'll find very little resistance from Apple.
 
 Here is a very short list of things to look for:
 * Don't let it crash all the time (duh)
@@ -148,7 +148,7 @@ Here is a very short list of things to look for:
 * In case you are showing ads, let Apple know.
 * Make sure your app adds value to the ecosystem.
 
-**Tip:** There is only 1 real guideline: "Don't upset Apple". Don't build anything you know Apple wouldn't want on there platform. 
+**Tip:** There is only 1 real guideline: "Don't upset Apple". Don't build anything you know Apple wouldn't want on their platform. 
 Anything that gives users a bad experience is a no-go.
 
 How long it takes to review an app depends on the time of the year.
@@ -171,5 +171,5 @@ The slowest and most boring step is setting up a contract.
 Make sure you start with this, since it may postpone your project if you let it wait for the very last moment.
 
 There are a lot of good articles on the Apple developer sites. 
-If your stuck at any of the above steps, there is most certainly a clear solution available.
+If you're stuck at any of the above steps, there is most certainly a clear solution available.
 Don't give up because having your app released in the App Store is an amazing experience!
