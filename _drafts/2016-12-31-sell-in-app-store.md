@@ -28,6 +28,8 @@ This is the part where you have put money on the table.
 Go to the [Apple developer program page](https://developer.apple.com/programs/enroll/), fill in the forms and pay 99 dollars.
 Remember, this is a membership fee you'll have to pay each year.
 
+![iTunes Connect enroll]({% asset_path itunes-connect-enroll.png %})
+
 For some of you this will seem like a large amount of money just to get your app in the App Store.
 In return a real person will check your app for performance, stability, maturity and overall quality.
 This lengthy process ensures most crappy apps don't make it to the App Store.
@@ -41,6 +43,8 @@ The name is probably a leftover from times where all apps lived in the iTunes St
 Go to the [iTunes Connect page](https://itunesconnect.apple.com/) and log in with your Apple ID.
 At the time of writing, there are 7 icons which lead you to the different sections of iTunes Connect.
 If you're stuck in any of the processes, click 'Resources and Help'. Apple has got you covered for most of the issues.
+
+![iTunes Connect home screen]({% asset_path itunes-connect.png %})
 
 The most important thing to do now is to set up users and roles.
 Apple needs to know who to contact for different cases.
@@ -68,6 +72,8 @@ You need to pay taxes one way or the other.
 Since Apple is a US-based company, taxes need to be arranged with the Tax service of the United States federal government.
 Therefore each company needs to fill in a US Tax form, which is provided in iTunes Connect.
 
+![iTunes Connect tax form]({% asset_path itunes-connect-tax.png %})
+
 If your company is based in the US and will receive payments on a US bank account, you only need to fill in the first part.
 For foreign companies this is a bit more difficult. 
 The US has all sorts of agreements which each country in the world on how to handle taxes.
@@ -79,11 +85,11 @@ If your country has this kind of treaty with the US, most of you will need to fi
 Make sure you enter all information correctly since this is a one-time submission.
 If there is something wrong with this form, changing it will take far more effort.
 
-> Forewarned is forearmed
-
 If every step is completed, the status of your contract will change to **pending**.
 After a while, your contract will move to the section **Contracts In Effect**.
 If you see this, champagne bottles can be popped, because the boring stuff will be completed and you will finally be able to just focus on your app.
+
+![iTunes Connect contract ok]({% asset_path itunes-connect-contract.png %})
 
 
 ## 5. Build your app
@@ -94,9 +100,13 @@ Just make sure you check out the latest API's and SDK's at the developer pages.
 It helps to pin down the last version of the platform you want to support.
 This gives you a clear view of which SDK's you can or can't use.
 
+> You revenue is affected by the number of platform versions you want to support. Make this decision wisely.
+
 The more versions you support, the more users you will reach.
 On the other hand, not being able to use newer SDK's will make your app lag behind of the competition.
 Make this decision wisely, because it will affect your revenue. 
+
+![Xcode deploy target]({% asset_path xcode-deploy-target.png %})
 
 ## 6. Set up Provisioning Profile
 While developing your app you want to test your app in a natural environment, i.e. outside a simulator.
@@ -111,6 +121,8 @@ It is important for you, Apple and your costumers to have this kind of guarantee
 New provisioning profiles can be created in your [Apple developer account](https://developer.apple.com).
 After that, you can add the provisioning profile to your app in Xcode.
 
+![Provisioning profiles]({% asset_path provisioning-profile.png %})
+
 When everything is set up, you can test your app on any of the provisioned devices.
 
 ## 7. Create an App in iTunes Connect
@@ -119,6 +131,8 @@ Each app has its own page in the App store and all that information needs to be 
 You do this in the "**My Apps**" section of iTunes Connect.
 
 Go over to [iTunes Connect] and create a new app.
+
+![iTunes connect app]({% asset_path itunes-connect-app.png %})
 
 There are 2 menu items in this section.
 * App information
@@ -131,6 +145,8 @@ The second page will allow you to set up a pricing model for your app.
 Before you can publish this page, you will need to upload your app.
 If you made it this far, you only have 1 obstacle to overcome.
 The all-feared App review!
+
+![Xcode organizer interface]({% asset_path xcode-upload-app.png %})
 
 ## 9. Submit for approval
 Apple likes to have control over all the apps on their platform.
@@ -159,8 +175,8 @@ When your app is approved all status lights will jump to green.
 This is a reward for all the effort you've put in this everlasting quest.
 Now it is time to finally make some money!
 
-## 10. Money
-Cash flows wildly
+## 10. Profit
+![app store profit meme]({% asset_path app-store-profit-meme.jpg %})
 
 ## Summary
 There are few things to remember. Apple users expect good quality apps and are willing to pay good money for it.
