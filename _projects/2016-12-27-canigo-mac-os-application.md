@@ -6,7 +6,7 @@ date:   2016-12-27 16:47:14
 tags: [swift, app store, google maps api]
 ---
 ![Canigo logo]({% asset_path canigo-logo.png %})
-![Download canigo from the app store]({% asset_path app-store-button.svg %})
+[![Download canigo from the app store]({% asset_path app-store-button.svg %})](https://itunes.apple.com/us/app/canigo/id1185241772?mt=12)
 Your time is precious. Every minute in traffic is time taken away from your family, side projects or other quality time spendings.
 
 Canigo allows you to take control over your time. Know when traffic jams are dissolving and outsmart all other commuters.
