@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Jef Vlamings | A clean calendar in CSS3 & jQuery</title>
+    <meta name="description" content="Step by step tutorial on how to make an animated calendar with CSS and jQuery">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="A clean calendar in CSS3 & jQuery">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://jefvlamings.be/blog/a-clean-calendar-in-css3-jquery">
+    <meta property="og:description" content="Step by step tutorial on how to make an animated calendar with CSS and jQuery">
+    <meta property="og:site_name" content="Jef Vlamings">
+    <meta property="og:image"
+          content="http://jefvlamings.be/assets/og-image.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="http://jefvlamings.be/blog/a-clean-calendar-in-css3-jquery">
+    <meta name="twitter:title" content="A clean calendar in CSS3 & jQuery">
+    <meta name="twitter:description" content="Step by step tutorial on how to make an animated calendar with CSS and jQuery">
+    <meta name="twitter:image"
+          content="http://jefvlamings.be/assets/og-image.png">
+
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <link href="http://jefvlamings.be/feed.xml" type="application/rss+xml" rel="alternate"
+          title="Jef Vlamings Last 10 blog posts"/>
+    <link type="text/css" rel="stylesheet" href="/assets/light.css">
+</head>
+
+<body>
+<main role="main">
+    <div class="grid grid-centered">
+        <div class="grid-cell">
+            <nav class="header-nav">
+    <a href="/" class="header-logo" title="Jef Vlamings">
+        Jef Vlamings
+    </a>
+    <div class="header-links">
+        <a href="/blog" title="blog">/ blog</a>
+        <a href="/projects" title="projects">/ projects</a>
+    </div>
+</nav>
+
+            <article class="article ">
+                <header class="article-header">
+                    <h1>A clean calendar in CSS3 & jQuery</h1>
+                    <div class="article-list-footer">
+                        <span class="article-list-date">November 3, 2011</span>
+                        <span class="article-list-divider">-</span>
+                        <span class="article-list-minutes">
+                            
+                            
+                              5 minute read
+                            
+                        </span>
+                    </div>
+                </header>
+
+                <div class="article-content">
+                    <p><img src="/assets/css3-calendar.gif" alt="CSS3 Calendar screenshot" /></p>
+
+<p>Almost a year ago I had the idea to build a calendar app. 
+The project was called LiveCal and was supposed to become a platform where you could share calendars. 
+The whole idea was that calendars would become something you subscribe to. 
+Let me clarify. Let’s say you are subscribed to the calendar stream of your school. 
+One of your teachers plans an event, such as a task or a test and adds it to the calendar stream. 
+From the moment the event is added to the stream, you’ll get a instant notification that a new event is being planned. 
+This means you’ll always walk around with an updated calendar. 
+Due to the complexity of the idea and the lack of knowledge on my side this project never really took off.</p>
+
+<p>Nevertheless I started to make a CSS3 calendar with some jQuery animation while I was working on this project. 
+In this article I will explain, step by step, how to use the calendar.</p>
+
+<h2 id="how-to-get-it">How to get it</h2>
+
+<p><a href="https://github.com/jefvlamings/css3-calendar">Github repo</a> |
+<a href="https://jefvlamings.github.io/css3-calendar/">Live demo</a></p>
+
+<h2 id="how-to-use-it">How to use it</h2>
+
+<p>You’re allowed to use the calendar for your own purpose. 
+For those who are interested to learn a bit more about how the calendar is built, I made a short guide about the animated CSS3 calendar.</p>
+
+<h3 id="basic-html-structure">Basic HTML structure</h3>
+
+<p>The first thing we have to do is add structure to the HTML file. 
+To keep things as simple as possible I used the usual terms you find in a calendar. 
+A day is nested in a week and a week is nested in a month. The div that represents a day is divided in three subdivs:</p>
+
+<ul>
+  <li><strong>daybar</strong>: the top bar displaying the day’s number of the month</li>
+  <li><strong>dots</strong>: a div containing an unordered list to present dots according to the events of that day.</li>
+  <li><strong>open</strong>: a div containing all events of that day. This div is only visible if it’s slid out.</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"week"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"day"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"daybar"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;p&gt;</span>31<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dots"</span><span class="nt">&gt;</span>
+           <span class="nt">&lt;ul&gt;</span>
+               <span class="nt">&lt;li&gt;&lt;/li&gt;</span>
+           <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="c">&lt;!-- slide open --&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"open"</span><span class="nt">&gt;</span>
+           <span class="nt">&lt;ul&gt;</span>
+               <span class="nt">&lt;li&gt;&lt;/li&gt;</span>
+           <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="c">&lt;!-- slide closed --&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+</div>
+
+<p>At the end of this article you can find out how I used jQuery to animate the accordion style calendar.</p>
+
+<h3 id="css-styling">CSS Styling</h3>
+
+<p>There are three styling elements that are important in the calendar.</p>
+
+<ul>
+  <li><strong>Color</strong>: add color to the dots and the events</li>
+  <li><strong>Length</strong>: add length to the events. A one hour event should be half the size of a two hour event</li>
+  <li><strong>Padding</strong>: Position each event on the right spot.</li>
+</ul>
+
+<h4 id="colors">Colors</h4>
+
+<p>For this calendar I made four classes with color names. 
+If you add one of the classes to any div then that div will obtain the background color of that class. 
+For example, if you want to create a green dot, you add the class “green” to the list element.</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dots"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"red"</span><span class="nt">&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"green"</span><span class="nt">&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"yellow"</span><span class="nt">&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"blue"</span><span class="nt">&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>Red</li>
+  <li>Green</li>
+  <li>Yellow</li>
+  <li>Blue</li>
+</ul>
+
+<p>This calendar makes use of 4 different colors. Of course you can add as many colors as you want.</p>
+
+<h4 id="event-length">Event length</h4>
+
+<p>Instead of giving each individual event a specific height or length, I made some pre formatted classes you can use. 
+Just type “lxx” where x is the amount of hours you want the event to be.</p>
+
+<ul>
+  <li><strong>l1</strong> = 1 hour event</li>
+  <li><strong>l5</strong> = 5 hour event</li>
+</ul>
+
+<p>For example:</p>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"open"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"yellow l2"</span><span class="nt">&gt;&lt;p&gt;</span>2 hour event<span class="nt">&lt;/p&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"green l10"</span><span class="nt">&gt;&lt;p&gt;</span>10 hour event<span class="nt">&lt;/p&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+</div>
+<h4 id="event-padding">Event padding</h4>
+
+<p>We now managed to add color and length to the events. 
+To position each event on the row according to the start of the event, we need to add an extra class to each div. 
+I made a preformatted class “ax” where x stands for the amount of hours between the previous event or the beginning of the day if no event took place.</p>
+
+<ul>
+  <li><strong>a1</strong> = after 1 hour. The event starts at 1 o’clock</li>
+  <li><strong>a12</strong> = after 12 hours. The event starts at 12 o’clock</li>
+  <li>Multiple events
+    <ul>
+      <li><strong>a8</strong> = after 8 hours. The first event starts at 8 o’clock</li>
+      <li><strong>a4</strong> = after 4 hours. The second events starts 4 hours after the previous event, which is at 12 o’clock</li>
+    </ul>
+  </li>
+</ul>
+
+<p>For example:</p>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"open"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"yellow l1 a13"</span><span class="nt">&gt;&lt;p&gt;</span>13:00 first event<span class="nt">&lt;/p&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"yellow l1 a1"</span><span class="nt">&gt;&lt;p&gt;</span>15:00 second event<span class="nt">&lt;/p&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"red l2 a3"</span><span class="nt">&gt;&lt;p&gt;</span>19:00 third event<span class="nt">&lt;/p&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+</div>
+<p>Keep in mind you’ll have to take the length of the event into account when you are adding spacing above an event.</p>
+
+<h3 id="jquery-magic">jQuery magic</h3>
+
+<p>For the accordion effect used in this calendar I made a customized script based on the Simple jQuery Accordion menu. 
+I tried to simplify the Simple jQuery Accordion script resulting in fewer lines of code. Here is my version.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">initMenu</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">//create variable named "block" and put class ".day" in it</span>
+    <span class="kd">var</span> <span class="nx">block</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">".day"</span><span class="p">);</span>
+    <span class="c1">//hide every div with class "open"</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">'.open'</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+    <span class="c1">//when a div with class ".day" is clicked ...</span>
+    <span class="nx">block</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span>
+        <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="c1">//... find all divs with class "open" and slide them open</span>
+            <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">parents</span><span class="p">(</span><span class="s1">'div:eq(0)'</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">'.open'</span><span class="p">).</span><span class="nx">slideToggle</span><span class="p">(</span><span class="s1">'fast'</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">);}</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span><span class="nx">initMenu</span><span class="p">();});</span>
+</code></pre>
+</div>
+<p>Put this piece of code in the header of your HTML file and you should be ready to go!</p>
+
+<h2 id="questions">Questions?</h2>
+
+<p>As I’m no longer using this calendar for the project I thought it could be useful for someone else. 
+I hope my instructions are clear enough for you to figure out how to use it. 
+If you have any problems with the calendar, feel free to ask questions. 
+I’ll try to answer as quickly as possible.</p>
+
+                </div>
+
+                <div class="article-share">
+                    
+                    <a href="" title="Share on Twitter"
+                       onclick="window.open('https://twitter.com/home?status=A clean calendar in CSS3 & jQuery - http://jefvlamings.be/blog/a-clean-calendar-in-css3-jquery by @jefvlamings', 'newwindow', 'width=500, height=225'); return false;">
+                        <span class="icon icon-social-twitter"></span>
+                    </a>
+                    <a href="" title="Share on Facebook"
+                       onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http://jefvlamings.be/blog/a-clean-calendar-in-css3-jquery', 'newwindow', 'width=500, height=500'); return false;">
+                        <span class="icon icon-social-facebook"></span>
+                    </a>
+                    <a href="" title="Share on Google+"
+                       onclick="window.open('https://plus.google.com/share?url=http://jefvlamings.be/blog/a-clean-calendar-in-css3-jquery', 'newwindow', 'width=550, height=400'); return false;">
+                        <span class="icon icon-social-googleplus"></span>
+                    </a>
+                </div>
+
+                
+                <div id="disqus_thread" class="article-comments"></div>
+                <script>
+                    (function () {
+                        var d = document, s = d.createElement('script');
+                        s.src = '//jef-vlamings.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments
+                    powered by Disqus.</a></noscript>
+                
+            </article>
+            <footer class="footer">
+    <div class="footer-info">
+        <span>Meerdorp 34/6, 2321 Meer</span>
+        <span><a href="tel:+32486956855">+32 (0) 486 956 855</a></span>
+        <span>BTW BE 0667.943.483</span>
+    </div>
+    <ul class="footer-links">
+        
+        <li>
+            <a href="https://twitter.com/jefvlamings" target="_blank" title="Twitter">
+                <span class="icon icon-social-twitter"></span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a href="https://github.com/jefvlamings" target="_blank" title="GitHub">
+                <span class="icon icon-social-github"></span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a href="https://dribbble.com/jefvlamings" target="_blank" title="Dribbble">
+                <span class="icon icon-social-dribbble-outline"></span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a href="https://www.linkedin.com/in/jefvlamings" target="_blank" title="LinkedIn">
+                <span class="icon icon-social-linkedin"></span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a href="bitcoin:1Nb661iZGgFiRC81fMhSKoRfuUYbZPextZ" target="_blank" title="Bitcoin">
+                <span class="icon icon-social-bitcoin"></span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a href="/feed.xml" target="_blank" title="RSS">
+                <span class="icon icon-social-rss"></span>
+            </a>
+        </li>
+        
+    </ul>
+</footer>
+
+        </div>
+    </div>
+</main>
+</body>
+</html>

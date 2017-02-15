@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Jef Vlamings | Chrome extensions for dummies</title>
+    <meta name="description" content="Extensive beginners guide on Chrome extensions">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="Chrome extensions for dummies">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://jefvlamings.be/blog/chrome-extensions-for-dummies">
+    <meta property="og:description" content="Extensive beginners guide on Chrome extensions">
+    <meta property="og:site_name" content="Jef Vlamings">
+    <meta property="og:image"
+          content="http://jefvlamings.be/assets/og-image.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="http://jefvlamings.be/blog/chrome-extensions-for-dummies">
+    <meta name="twitter:title" content="Chrome extensions for dummies">
+    <meta name="twitter:description" content="Extensive beginners guide on Chrome extensions">
+    <meta name="twitter:image"
+          content="http://jefvlamings.be/assets/og-image.png">
+
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <link href="http://jefvlamings.be/feed.xml" type="application/rss+xml" rel="alternate"
+          title="Jef Vlamings Last 10 blog posts"/>
+    <link type="text/css" rel="stylesheet" href="/assets/light.css">
+</head>
+
+<body>
+<main role="main">
+    <div class="grid grid-centered">
+        <div class="grid-cell">
+            <nav class="header-nav">
+    <a href="/" class="header-logo" title="Jef Vlamings">
+        Jef Vlamings
+    </a>
+    <div class="header-links">
+        <a href="/blog" title="blog">/ blog</a>
+        <a href="/projects" title="projects">/ projects</a>
+    </div>
+</nav>
+
+            <article class="article ">
+                <header class="article-header">
+                    <h1>Chrome extensions for dummies</h1>
+                    <div class="article-list-footer">
+                        <span class="article-list-date">April 5, 2012</span>
+                        <span class="article-list-divider">-</span>
+                        <span class="article-list-minutes">
+                            
+                            
+                              10 minute read
+                            
+                        </span>
+                    </div>
+                </header>
+
+                <div class="article-content">
+                    <p>I only recently started programming after following courses on <a href="https://www.codecademy.com">Codecademy</a> and now I’m already building full-blown Chrome extensions. 
+The first browser extension I made is <a href="https://chrome.google.com/webstore/detail/loop-by-jef-vlamings/mmnobpjdkkmlaalimhnohcklkmkohkjn">“Loop” a YouTube video playlist</a> to cue your favorite YouTube videos and play them like you would on your iPod. 
+It has a simple and easy to use UI that popups up once you click a button in Chrome. 
+To learn how I developed this in just two weeks, keep on reading!</p>
+
+<p><img src="/assets/loop-screenshot.png" alt="Loop - A YouTube playlist for Chrome" /></p>
+
+<h2 id="background-information">Background information</h2>
+<p>Before you get started you should know that basic Javascript and HTML skills are required. 
+If you need to refresh these, I strongly advise you to go to <a href="http://www.codeyear.com">codeyear.com</a> and take some courses.</p>
+
+<h3 id="documentation">Documentation</h3>
+<p>Once you got a hold on Javascript and HTML/DOM you should definitely pin the following webpages to your bookmarks because you’ll be visiting them a lot.</p>
+
+<ul>
+  <li><a href="https://developer.chrome.com/extensions">Google Chrome Extensions documentation</a></li>
+  <li><a href="http://stackoverflow.com/questions/tagged/google-chrome-extension">Stack Overflow – [google-chrome-extensions]</a></li>
+  <li><a href="https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions">Google Groups – Chrome extensions</a></li>
+</ul>
+
+<p>I found myself mostly looking for answers on Stack Overflow because I felt like Google was skipping some not so obvious steps in their official documentation.</p>
+
+<h3 id="types-of-extensions">Types of extensions</h3>
+<p>There are 4 different kinds of user interfaces a Chrome extension can have. 
+The official documentation is not so clear about all the options you have. 
+But these 4 appearances are the ones you’re most likely to use.</p>
+
+<p><img src="/assets/chrome-extensions-types.png" alt="Different UI's for Chrome extensions" /></p>
+
+<ul>
+  <li><strong>Browser Actions</strong>: add an icon next to your address bar (i.e. to show a popup)</li>
+  <li><strong>Page Actions</strong>: show a little icon in the address bar</li>
+  <li><strong>Desktop notifications</strong>: show notifications on your desktop</li>
+  <li><strong>Omnibox</strong>: add functionality to your address bar with predefined keywords</li>
+</ul>
+
+<p>In this tutorial we will focus more on browser actions. 
+The Chrome extension I built is a typical example of a browser action with a popup window. 
+If you want to use one of the 4 appearances you’ll have to specify it in something called the “manifest file”.</p>
+
+<h2 id="getting-started">Getting started</h2>
+<p>To build your very first Chrome extension, create a folder on your computer and call it something like “my first extension”. 
+This folder will be used to store all the files necessary for your extension. 
+The first file you need to create is the manifest file.</p>
+
+<h3 id="manifest-file">Manifest file</h3>
+<p>The manifest file contains all the information Chrome needs to understand how your extension should work. I’ll give you a quick overview of all the elements a proper manifest file needs. First of all, open a decent text editor (I like to use Sublime Text 2 or Textwrangler) and copy-paste these lines of code.</p>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The name of your extension"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Explain what your extension does"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"tabs"</span><span class="p">,</span><span class="w"> </span><span class="s2">"http://*/*"</span><span class="p">,</span><span class="w"> </span><span class="s2">"background"</span><span class="p">],</span><span class="w">
+    </span><span class="nt">"background_page"</span><span class="p">:</span><span class="w"> </span><span class="s2">"background.html"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"content_scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nt">"matches"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"http://*/*"</span><span class="p">],</span><span class="nt">"js"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"inject.js"</span><span class="p">]}],</span><span class="w">
+    </span><span class="nt">"browser_action"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"default_icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16x16.png"</span><span class="p">,</span><span class="nt">"popup"</span><span class="p">:</span><span class="w"> </span><span class="s2">"popup.html"</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+<p>Now save this file as “manifest.json” in your extension folder.</p>
+
+<p><strong>Tip</strong>: notice how every rule is ended with a comma except the last one! JSON objects aren’t allowed to have a trailing comma.</p>
+
+<ul>
+  <li><strong>permissions</strong>: You need to set permissions if you want to use some of the API functionality of Chrome extensions.
+    <ul>
+      <li><strong>tabs</strong>: if you want to access tabs or detect when something changes in a tab.</li>
+      <li><strong>url</strong>: determine which webpages you want your extension to work with (use http://<em>/</em> for all websites).</li>
+      <li><strong>background</strong>: if you want to use a background page (clarified further down this page).</li>
+    </ul>
+  </li>
+  <li><strong>background_page</strong>: specify the file that will serve as your background page.</li>
+  <li><strong>content_scripts</strong>
+    <ul>
+      <li><strong>matches</strong>: specify for which webpages the content script should be injected.</li>
+      <li><strong>js</strong>: specify the file that will serve as your content script.</li>
+    </ul>
+  </li>
+  <li><strong>browser_action</strong>
+    <ul>
+      <li><strong>default_icon</strong>: specify where the icon for your extension is located (must be 16px wide and 16px high) in your extension folder.</li>
+      <li><strong>popup</strong>: specify the file that will serve as your popup page.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>As you can see quite a lot of files are necessary to build a simple extension. Anyway let’s start to make a “Hello World!”-application.</p>
+
+<h3 id="popuphtml">Popup.html</h3>
+<p>Most Chrome extensions use a popup window that shows up if you click on an extension icon. 
+This popup browser action, as Google likes to call it, is particularly useful if you want to show information to your users <strong>without interrupting</strong> the browsing experience. 
+There are a lot of cases where a popup is much more efficient than opening a new webpage for instance.</p>
+
+<p>To show “Hello World!” to your users, create a new file called “popup.html” and add the following lines of code.</p>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;&lt;title&gt;</span>Hello World!<span class="nt">&lt;/title&gt;&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Hello World!<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+</div>
+<p>A popup is simply displaying a local HTML-file in a dedicated window. 
+The good part is that you don’t have to worry about browser compatibility since your building this extension exclusively for Chrome. 
+It’s the perfect playground to experiment with some of the recently supported HTML5 tags.</p>
+
+<p>Hey presto! Your first extension!
+Now you should have a folder on your computer with 2 files, i.e. <strong>“manifest.json”</strong> and <strong>“popup.html“</strong>. 
+That’s all it takes to create a Chrome extension.</p>
+
+<p>But since we also specified other files in our manifest file we must add those files to the folder as well. 
+So before you can fire up your extension, create the next dummy files, which we’ll be needing for the rest of the tutorial. 
+Don’t worry about the purpose of these files yet. It will all be explained further down this page.</p>
+
+<ul>
+  <li><strong>background.html</strong>: create an empty HTML-file with the appropriate tags</li>
+  <li><strong>inject.js</strong>: create an empty Javascript file</li>
+  <li><strong>16×16.png</strong>: you need a 16 by 16px icon.</li>
+</ul>
+
+<p>Now let’s fire it up. 
+Open your Chrome browser and go to the extensions page. 
+Click on the wrench icon next to the address bar and choose <strong>Tools » extensions</strong>. 
+Make sure “developer mode” is ticked. 
+Next, click on <strong>“Load unpacked extension”</strong> and choose your folder in the file dialog. 
+Your extension should now be loaded in your Chrome browser. 
+To confirm if everything went well, check if a <strong>new icon appeared</strong> next to the address bar.</p>
+
+<p>If you click on it you should see something like this:
+<img src="/assets/chrome-extensions-hello-world.png" alt="Extension Popup showing Hello World!" />
+Congratulations! You’ve just build your first Chrome extension. From now on, we’ll dive deeper into the possibilities of extensions.</p>
+
+<h2 id="execution-environments">Execution environments</h2>
+<p>I think it’s about time to talk about background pages and content scripts. 
+Background pages and content scripts are actually the same. 
+They are both files where most of the coding happens. 
+The main difference is that background pages and content scripts run in different execution environments. 
+<strong>Background pages</strong> run in the <strong>extension environment</strong> and are hidden from the user, while <strong>content scrips</strong> run in the <strong>webpage environment</strong> and can affect the web page you’re visiting.</p>
+
+<p>Just like me, you’re probably wondering why Google made it so complicated. 
+It actually has a very important purpose, i.e. if your extension runs in a different environment you’ll never have to worry about your code interfering with the one of the webpages. 
+This means you can use the same variable, function or object names as the website with absolutely no interference.</p>
+
+<p>In my extension (Loop), I used three extra files of which I’ll be discussing two:</p>
+
+<ul>
+  <li><strong>Background.html</strong>. This is my background page which holds most of the code. 
+All information I gather is controlled in this file.</li>
+  <li><strong>Inject.js</strong>. This is a content script I load in every YouTube page. 
+It tells me all about the video I’m watching.</li>
+</ul>
+
+<h3 id="background-pages">Background pages</h3>
+
+<p><img src="/assets/chrome-extensions-background.png" alt="Background pages vs browser actions" /></p>
+
+<p>Background pages are scripts that run in the background. 
+The benefits of background pages is that they are able to <strong>communicate</strong> with <strong>every tab</strong> and <strong>every extension file</strong> in you browser. 
+It doesn’t matter how many tabs or windows you’ve opened, it can easily detect changes being made. 
+On top of that background pages can <strong>also</strong> communicate with <strong>browser actions</strong> and <strong>content scripts</strong>. 
+So they serve as the ideal negotiator between your popup, your content script and the webpages that are being viewed.</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;script&gt;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Hello World!"</span><span class="p">);</span>
+  <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+</div>
+<p>A background page is nothing more than <strong>Javascript code</strong> being wrapped in an HTML-file. 
+Make sure you use it wisely because background pages are always open. 
+This means that from the moment you start Chrome, your background pages are being loaded. 
+If they demand a lot of computing power or network bandwidth, you’re browsing experience could be harmed.</p>
+
+<h3 id="debugging">Debugging</h3>
+<p>Keep in mind that background pages run in the background (strangely enough). 
+If you want to see error messages or console logs you won’t find it in the standard debugging console of your browser because they’re are meant for webpages. 
+Background pages run in the extension environment and thus have a <strong>dedicated debugging console</strong>.</p>
+
+<p><img src="/assets/chrome-extensions-debugging-console.png" alt="Debugging console for background.html" /></p>
+
+<p>To activate this console, go to the extensions page and click on “background.html” listed in your extension.</p>
+
+<p><strong>Tip.</strong> type “chrome://settings/extensions” in your address bar or right-click your extension icon and click “manage extensions..”.</p>
+
+<h3 id="content-scripts">Content scripts</h3>
+<p>In most cases you’ll want to <strong>read the DOM</strong> of the visited <strong>webpages</strong>. 
+Since extensions run in a different execution environment it is <strong>impossible for background pages or browser actions</strong> to read DOM-elements of the webpages you’re visiting. 
+Google came up with something clever called “content scipts”. 
+Content scripts are <strong>injected in the current webpage</strong> as if they were supplied by the original website.</p>
+
+<p><img src="/assets/chrome-extensions-content-script.png" alt="Content scripts vs background pages" /></p>
+
+<p>Content scripts have the <strong>benefit</strong> of communicating with background pages while maintaining the ability to read the DOM of the webpages you’re visiting. 
+The **downside ** of using content scripts is that you can’t directly call Chrome API functions from within the content script because they’re separated from the extension environment.</p>
+
+<p>So how can you pass information from a content script to a background page and vice versa if they run in different execution environments? 
+Luckily there are ways to work around this with something called “message passing”.</p>
+
+<h3 id="message-passing">Message passing</h3>
+<p>Through message passing you’re able to send and receive information between <strong>content scripts</strong> and <strong>background pages</strong>. 
+Message passing is done like this:</p>
+
+<p>To send a request add this piece of code.</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">chrome</span><span class="p">.</span><span class="nx">extension</span><span class="p">.</span><span class="nx">sendRequest</span><span class="p">({</span>
+  <span class="s2">"greeting"</span><span class="p">:</span> <span class="s2">"hello"</span><span class="p">,</span>
+  <span class="s2">"var1"</span><span class="p">:</span> <span class="s2">"variable 1"</span><span class="p">,</span>  <span class="c1">//string</span>
+  <span class="s2">"var2"</span><span class="p">:</span> <span class="kc">true</span>           <span class="c1">//boolean</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<p>The first variable could serve as a recognition phrase. 
+That’s how I tend to use it. 
+Make sure you don’t add a trailing comma to the array or your code will fail.</p>
+
+<p>On the receiving end add something like this:</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">chrome</span><span class="p">.</span><span class="nx">extension</span><span class="p">.</span><span class="nx">onRequest</span><span class="p">.</span><span class="nx">addListener</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span> <span class="nx">sender</span><span class="p">,</span> <span class="nx">sendResponse</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">request</span><span class="p">.</span><span class="nx">greeting</span> <span class="o">==</span> <span class="s2">"hello"</span><span class="p">){</span>
+    <span class="nx">var1</span> <span class="o">=</span> <span class="nx">request</span><span class="p">.</span><span class="nx">var1</span><span class="p">;</span> <span class="c1">// Set variable 1</span>
+    <span class="nx">var2</span> <span class="o">=</span> <span class="nx">request</span><span class="p">.</span><span class="nx">var2</span><span class="p">;</span> <span class="c1">// Set variable 2</span>
+  <span class="p">}</span>
+  <span class="k">else</span><span class="p">{</span>
+    <span class="nx">sendResponse</span><span class="p">({});</span>    <span class="c1">// Stop</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+<p>Although this piece of code listens to all the requests that are being sent from other files in the extension, it will only store information if the variable of greeting has the string “hello” attached to it. 
+It’s a simple but effective method to distinguish between different requests.</p>
+
+<p>It doesn’t matter if you’re in a content script or in a background page, the way messages are being passed remains the same. 
+So you could put the code for the reception of a request in any of the files.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>I tried to give a brief overview of how Chrome extensions work and how they are being built. 
+I hope this short introduction will set you off to start and build something beautiful. 
+To conclude I would like to give some extra advice to beginners.</p>
+
+<p>Please, take your time to build your first extension. 
+You will get frustrated at one point because you’ll find yourself in situations where you’re code isn’t running like it should or the documentation is inadequate and you can’t reproduce another ones output. 
+Just <em>keep calm</em> and <em>keep trying</em>. 
+If nothing seems to work, just try trial-and-error and you’ll stumble upon some answers eventually. 
+Also, <strong>try to understand what you’re doing</strong>, it will help you in the long run and you’ll benefit from it later on. 
+After all making your first extension is probably more about learning than about delivering a complete product.</p>
+
+<p>If you want to snoop around in the source code of my first extension, feel free to go and check it out on GitHub! 
+You can find the full code base on my GitHub page.</p>
+
+<p><a href="https://github.com/jefvlamings/Loop">Get the code</a></p>
+
+<p>If you still have some questions left, feel free to ask questions in the comment section below or check out one of the suggested links. 
+Good luck with your first Chrome extension!</p>
+
+                </div>
+
+                <div class="article-share">
+                    
+                    <a href="" title="Share on Twitter"
+                       onclick="window.open('https://twitter.com/home?status=Chrome extensions for dummies - http://jefvlamings.be/blog/chrome-extensions-for-dummies by @jefvlamings', 'newwindow', 'width=500, height=225'); return false;">
+                        <span class="icon icon-social-twitter"></span>
+                    </a>
+                    <a href="" title="Share on Facebook"
+                       onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http://jefvlamings.be/blog/chrome-extensions-for-dummies', 'newwindow', 'width=500, height=500'); return false;">
+                        <span class="icon icon-social-facebook"></span>
+                    </a>
+                    <a href="" title="Share on Google+"
+                       onclick="window.open('https://plus.google.com/share?url=http://jefvlamings.be/blog/chrome-extensions-for-dummies', 'newwindow', 'width=550, height=400'); return false;">
+                        <span class="icon icon-social-googleplus"></span>
+                    </a>
+                </div>
+
+                
+                <div id="disqus_thread" class="article-comments"></div>
+                <script>
+                    (function () {
+                        var d = document, s = d.createElement('script');
+                        s.src = '//jef-vlamings.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments
+                    powered by Disqus.</a></noscript>
+                
+            </article>
+            <footer class="footer">
+    <div class="footer-info">
+        <span>Meerdorp 34/6, 2321 Meer</span>
+        <span><a href="tel:+32486956855">+32 (0) 486 956 855</a></span>
+        <span>BTW BE 0667.943.483</span>
+    </div>
+    <ul class="footer-links">
+        
+        <li>
+            <a href="https://twitter.com/jefvlamings" target="_blank" title="Twitter">
+                <span class="icon icon-social-twitter"></span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a href="https://github.com/jefvlamings" target="_blank" title="GitHub">
+                <span class="icon icon-social-github"></span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a href="https://dribbble.com/jefvlamings" target="_blank" title="Dribbble">
+                <span class="icon icon-social-dribbble-outline"></span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a href="https://www.linkedin.com/in/jefvlamings" target="_blank" title="LinkedIn">
+                <span class="icon icon-social-linkedin"></span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a href="bitcoin:1Nb661iZGgFiRC81fMhSKoRfuUYbZPextZ" target="_blank" title="Bitcoin">
+                <span class="icon icon-social-bitcoin"></span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a href="/feed.xml" target="_blank" title="RSS">
+                <span class="icon icon-social-rss"></span>
+            </a>
+        </li>
+        
+    </ul>
+</footer>
+
+        </div>
+    </div>
+</main>
+</body>
+</html>

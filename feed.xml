@@ -1,20 +1,26 @@
----
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <title>{{ site.name | xml_escape }}</title>
-    <description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>
-    <link>{{ site.url }}</link>
-    <atom:link href="{{ page.path | absolute_url }}" rel="self" type="application/rss+xml" />
-    {% for post in site.posts limit:10 %}
+    <title>Jef Vlamings</title>
+    <description></description>
+    <link>http://jefvlamings.be</link>
+    <atom:link href="http://jefvlamings.be/feed.xml" rel="self" type="application/rss+xml" />
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.description | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | absolute_url }}</link>
-        <guid isPermaLink="true">{{ post.url | absolute_url }}</guid>
+        <title>Chrome extensions for dummies</title>
+        <description>Extensive beginners guide on Chrome extensions</description>
+        <pubDate>Thu, 05 Apr 2012 18:47:14 +0200</pubDate>
+        <link>http://jefvlamings.be/blog/chrome-extensions-for-dummies</link>
+        <guid isPermaLink="true">http://jefvlamings.be/blog/chrome-extensions-for-dummies</guid>
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>A clean calendar in CSS3 &amp; jQuery</title>
+        <description>Step by step tutorial on how to make an animated calendar with CSS and jQuery</description>
+        <pubDate>Thu, 03 Nov 2011 17:47:14 +0100</pubDate>
+        <link>http://jefvlamings.be/blog/a-clean-calendar-in-css3-jquery</link>
+        <guid isPermaLink="true">http://jefvlamings.be/blog/a-clean-calendar-in-css3-jquery</guid>
+      </item>
+    
   </channel>
 </rss>

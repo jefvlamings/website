@@ -1,40 +1,293 @@
----
-layout: default
-title: "Projects"
-description: "I build small powerful tools to optimize your workflow, whether for personal or professional use.
-Contact me if you need a high quality application for mobile, desktop, web or all of them."
----
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Jef Vlamings | Projects</title>
+    <meta name="description" content="I build small powerful tools to optimize your workflow, whether for personal or professional use. Contact me if you need a high quality application for mobile, desktop, web or all of them.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<ul class="article-list">
-    {% assign projects = (site.projects | sort: 'date') | reverse %}
-    {% for project in projects %}
+    <meta property="og:title" content="Projects">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://jefvlamings.be/projects/">
+    <meta property="og:description" content="I build small powerful tools to optimize your workflow, whether for personal or professional use. Contact me if you need a high quality application for mobile, desktop, web or all of them.">
+    <meta property="og:site_name" content="Jef Vlamings">
+    <meta property="og:image"
+          content="http://jefvlamings.be/assets/og-image.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="http://jefvlamings.be/projects/">
+    <meta name="twitter:title" content="Projects">
+    <meta name="twitter:description" content="I build small powerful tools to optimize your workflow, whether for personal or professional use. Contact me if you need a high quality application for mobile, desktop, web or all of them.">
+    <meta name="twitter:image"
+          content="http://jefvlamings.be/assets/og-image.png">
+
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <link href="http://jefvlamings.be/feed.xml" type="application/rss+xml" rel="alternate"
+          title="Jef Vlamings Last 10 blog posts"/>
+    <link type="text/css" rel="stylesheet" href="/assets/light.css">
+</head>
+
+<body>
+<main role="main">
+    <div class="grid grid-centered">
+        <div class="grid-cell">
+            <nav class="header-nav">
+    <a href="/" class="header-logo" title="Jef Vlamings">
+        Jef Vlamings
+    </a>
+    <div class="header-links">
+        <a href="/blog" title="blog">/ blog</a>
+        <a href="/projects" title="projects">/ projects</a>
+    </div>
+</nav>
+
+            <ul class="article-list">
+    
+    
     <li class="article-list-item ">
-        {% if project.link %}
-        <a href="{{ project.link }}" target="_blank" title="{{ project.title }}">
-        {% else %}
-        <a href="{{ project.url | relative_url }}" title="{{ project.title }}">
-        {% endif %}
+        
+        <a href="/projects/canigo-mac-os-application" title="Canigo macOS menu bar app">
+        
             <h5>
-                {{ project.title }}
-                {% if project.link %}
-                <span class="icon icon-share"></span>
-                {% else %}
+                Canigo macOS menu bar app
+                
                 <span class="icon icon-ios-arrow-thin-right"></span>
-                {% endif %}
+                
             </h5>
         </a>
-        <p>{{ project.description }}</p>
+        <p>Small Menu Bar app for MacOS that gives you real-time travel times for any destination. Perfect tool for commuters.</p>
         <div class="article-list-footer">
             <span class="article-list-date">
-              {{ project.date | date: "%B %-d, %Y" }}
+              December 27, 2016
             </span>
             <span class="article-list-divider">-</span>
             <span class="article-list-tags">
-                {% for tag in project.tags %}
-                {{ tag }}{% if tag != project.tags.last %}, {% endif %}
-                {% endfor %}
+                
+                swift, 
+                
+                app store, 
+                
+                google maps api
+                
             </span>
         </div>
     </li>
-    {% endfor %}
+    
+    <li class="article-list-item ">
+        
+        <a href="https://github.com/jefvlamings/boilerplate-gulp-webpack-es6" target="_blank" title="Boilerplate for Gulp + Webpack + ES6 + HAML + SASS">
+        
+            <h5>
+                Boilerplate for Gulp + Webpack + ES6 + HAML + SASS
+                
+                <span class="icon icon-share"></span>
+                
+            </h5>
+        </a>
+        <p>Boilerplate project to easily setup a project that requires ES6, HAML and sass.</p>
+        <div class="article-list-footer">
+            <span class="article-list-date">
+              May 16, 2015
+            </span>
+            <span class="article-list-divider">-</span>
+            <span class="article-list-tags">
+                
+                gulp, 
+                
+                webpack, 
+                
+                ES6, 
+                
+                haml, 
+                
+                sass
+                
+            </span>
+        </div>
+    </li>
+    
+    <li class="article-list-item ">
+        
+        <a href="https://github.com/jefvlamings/boilerplate-gulp-browserify-coffeescript" target="_blank" title="Boilerplate for Gulp + Browserify + Coffeescript + HAML + SASS">
+        
+            <h5>
+                Boilerplate for Gulp + Browserify + Coffeescript + HAML + SASS
+                
+                <span class="icon icon-share"></span>
+                
+            </h5>
+        </a>
+        <p>Boilerplate project to easily setup a project that requires Coffeescript, HAML and sass.</p>
+        <div class="article-list-footer">
+            <span class="article-list-date">
+              May 16, 2015
+            </span>
+            <span class="article-list-divider">-</span>
+            <span class="article-list-tags">
+                
+                gulp, 
+                
+                browserify, 
+                
+                coffeescript, 
+                
+                haml, 
+                
+                sass
+                
+            </span>
+        </div>
+    </li>
+    
+    <li class="article-list-item ">
+        
+        <a href="https://jefvlamings.github.io/resume/" target="_blank" title="My first resume">
+        
+            <h5>
+                My first resume
+                
+                <span class="icon icon-share"></span>
+                
+            </h5>
+        </a>
+        <p>Custom made resume with dynamic elements,</p>
+        <div class="article-list-footer">
+            <span class="article-list-date">
+              July 17, 2012
+            </span>
+            <span class="article-list-divider">-</span>
+            <span class="article-list-tags">
+                
+                css, 
+                
+                javascript, 
+                
+                html, 
+                
+                photoshop, 
+                
+                illustrator
+                
+            </span>
+        </div>
+    </li>
+    
+    <li class="article-list-item ">
+        
+        <a href="/projects/loop-chrome-extension" title="Loop Chrome extension">
+        
+            <h5>
+                Loop Chrome extension
+                
+                <span class="icon icon-ios-arrow-thin-right"></span>
+                
+            </h5>
+        </a>
+        <p>A chrome extension to create playlists and play your favorite videos in the background. Currently outdated, might not work anymore.</p>
+        <div class="article-list-footer">
+            <span class="article-list-date">
+              April 2, 2012
+            </span>
+            <span class="article-list-divider">-</span>
+            <span class="article-list-tags">
+                
+                chrome extension api, 
+                
+                youtube api, 
+                
+                localstorage, 
+                
+                javascript
+                
+            </span>
+        </div>
+    </li>
+    
+    <li class="article-list-item ">
+        
+        <a href="https://jefvlamings.github.io/css3-calendar/" target="_blank" title="A clean calendar in CSS3 & jQuery">
+        
+            <h5>
+                A clean calendar in CSS3 & jQuery
+                
+                <span class="icon icon-share"></span>
+                
+            </h5>
+        </a>
+        <p>Dynamic monthly calendar UI with slide out animation for detailed activities of the day.</p>
+        <div class="article-list-footer">
+            <span class="article-list-date">
+              November 3, 2011
+            </span>
+            <span class="article-list-divider">-</span>
+            <span class="article-list-tags">
+                
+                css, 
+                
+                javascript, 
+                
+                html
+                
+            </span>
+        </div>
+    </li>
+    
 </ul>
+            <footer class="footer">
+    <div class="footer-info">
+        <span>Meerdorp 34/6, 2321 Meer</span>
+        <span><a href="tel:+32486956855">+32 (0) 486 956 855</a></span>
+        <span>BTW BE 0667.943.483</span>
+    </div>
+    <ul class="footer-links">
+        
+        <li>
+            <a href="https://twitter.com/jefvlamings" target="_blank" title="Twitter">
+                <span class="icon icon-social-twitter"></span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a href="https://github.com/jefvlamings" target="_blank" title="GitHub">
+                <span class="icon icon-social-github"></span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a href="https://dribbble.com/jefvlamings" target="_blank" title="Dribbble">
+                <span class="icon icon-social-dribbble-outline"></span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a href="https://www.linkedin.com/in/jefvlamings" target="_blank" title="LinkedIn">
+                <span class="icon icon-social-linkedin"></span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a href="bitcoin:1Nb661iZGgFiRC81fMhSKoRfuUYbZPextZ" target="_blank" title="Bitcoin">
+                <span class="icon icon-social-bitcoin"></span>
+            </a>
+        </li>
+        
+        
+        <li>
+            <a href="/feed.xml" target="_blank" title="RSS">
+                <span class="icon icon-social-rss"></span>
+            </a>
+        </li>
+        
+    </ul>
+</footer>
+
+        </div>
+    </div>
+</main>
+</body>
+</html>
